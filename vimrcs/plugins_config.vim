@@ -31,6 +31,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'suan/vim-instant-markdown'
 "Plugin 'lilydjwg/fcitx.vim'
 Plugin 'vim-scripts/indentpython.vim'
+Plugin 'python-mode/python-mode'
 
 
 call vundle#end()            " required
@@ -163,7 +164,7 @@ nnoremap <F5> :GundoToggle<CR>
 autocmd BufNewFile,BufRead *.py  setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
 
 " web indentation
-autocmd BufNewFile,BufRead *.js, *.html, *.css setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd BufNewFile,BufRead *.js,*.html,*.css setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 " mark extra whitespace as bad, and probably color it red.
 "autocmd BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
@@ -174,3 +175,12 @@ let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_frontmatter = 1
 "let g:vim_markdown_json_frontmatter = 1
 
+" Override go-to.definition key shortcut to Ctrl-]
+let g:pymode_rope_goto_definition_bind = "<C-]>"
+
+" Override run current python file key shortcut to Ctrl-Shift-e
+let g:pymode_run_bind = "<C-S-e>"
+
+" Override view python doc key shortcut to Ctrl-Shift-d
+let g:pymode_doc_bind = "<C-S-d>"
+let g:pymode_python = 'python3'
