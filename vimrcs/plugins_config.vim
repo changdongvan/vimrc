@@ -54,20 +54,20 @@ nmap <silent> <Leader>ig <Plug>IndentGuidesToggle
 nmap <silent> <Leader>sw :FSHere<cr>
 
 " tagbar
-" 设置 tagbar 子窗口的位置出现在主编辑区的左边 
-let tagbar_left=1 
+" 设置 tagbar 子窗口的位置出现在主编辑区的左边
+let tagbar_left=1
 " 设置显示／隐藏标签列表子窗口的快捷键。速记：identifier list by tag
-nnoremap <Leader>tb :TagbarToggle<CR> 
-" 设置标签子窗口的宽度 
-let tagbar_width=32 
-" tagbar 子窗口中不显示冗余帮助信息 
+nnoremap <Leader>tb :TagbarToggle<CR>
+" 设置标签子窗口的宽度
+let tagbar_width=32
+" tagbar 子窗口中不显示冗余帮助信息
 let g:tagbar_compact=1
 " 设置 ctags 对哪些代码标识符生成标签
 let g:tagbar_type_cpp = {
     \ 'kinds' : [
          \ 'c:classes:0:1',
          \ 'd:macros:0:1',
-         \ 'e:enumerators:0:0', 
+         \ 'e:enumerators:0:0',
          \ 'f:functions:0:1',
          \ 'g:enumeration:0:1',
          \ 'l:local:0:1',
@@ -135,7 +135,7 @@ set completeopt-=preview
 let g:ycm_min_num_of_chars_for_completion=1
 " 禁止缓存匹配项，每次都重新生成匹配项
 let g:ycm_cache_omnifunc=0
-" 语法关键字补全         
+" 语法关键字补全
 let g:ycm_seed_identifiers_with_syntax=1
 
 " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
@@ -149,13 +149,20 @@ let NERDTreeShowHidden=1
 " NERDTree 子窗口中不显示冗余帮助信息
 let NERDTreeMinimalUI=1
 " 删除文件时自动删除文件对应 buffer
-ret NERDTreeAutoDeleteBuffer=1
+let NERDTreeAutoDeleteBuffer=1
 
+" MiniBufExplorer config
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
 " 显示/隐藏 MiniBufExplorer 窗口
 map <Leader>bl :MBEToggle<cr>
 " buffer 切换快捷键
-map <C-Tab> :MBEbn<cr>
-map <C-S-Tab> :MBEbp<cr>
+noremap <Leader>bn :MBEbn<cr>
+noremap <Leader>bp :MBEbp<cr>
+"noremap <C-Tab> :MBEbn<cr>
+"noremap <C-S-Tab> :MBEbp<cr>
 
 " gundo config
 nnoremap <F5> :GundoToggle<CR>
@@ -185,3 +192,19 @@ let g:pymode_run_bind = "<C-S-e>"
 let g:pymode_doc_bind = "<C-S-d>"
 let g:pymode_python = 'python3'
 let g:pymode_options_colorcolumn = 0
+
+" bookmark config
+nnoremap <silent> <leader>mc :call clearmatches()\|:delmarks a-z<CR>
+nnoremap <silent> <leader>mu :call HLMarks("Marks")<CR>
+
+" ctrlsf config
+let g:ctrlsf_winsize = '40%'
+let g:ctrlsf_position = 'bottom'
+nmap     <C-F>f <Plug>CtrlSFPrompt
+vmap     <C-F>f <Plug>CtrlSFVwordPath
+vmap     <C-F>F <Plug>CtrlSFVwordExec
+nmap     <C-F>n <Plug>CtrlSFCwordPath
+nmap     <C-F>p <Plug>CtrlSFPwordPath
+nnoremap <C-F>o :CtrlSFOpen<CR>
+nnoremap <C-F>t :CtrlSFToggle<CR>
+inoremap <C-F>t <Esc>:CtrlSFToggle<CR>

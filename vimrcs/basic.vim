@@ -131,7 +131,8 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme desert
+    "colorscheme solarized
+    colorscheme molokai
 catch
 endtry
 
