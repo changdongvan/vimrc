@@ -41,11 +41,11 @@ filetype plugin indent on    " required`
 
 " indent-guids for help :help indent-guides
 " 随 vim 自启动
-let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_enable_on_vim_startup=0
 " 从第二层开始可视化显示缩进
 let g:indent_guides_start_level=3
 " 色块宽度
-let g:indent_guides_guide_size=2
+let g:indent_guides_guide_size=1
 " 快捷键 i 开/关缩进可视化
 nmap <silent> <Leader>ig <Plug>IndentGuidesToggle
 
@@ -165,7 +165,7 @@ noremap <Leader>bp :MBEbp<cr>
 "noremap <C-S-Tab> :MBEbp<cr>
 
 " gundo config
-nnoremap <F5> :GundoToggle<CR>
+"nnoremap <F5> :GundoToggle<CR>
 
 " PEP8 indentation
 autocmd BufNewFile,BufRead *.py  setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
